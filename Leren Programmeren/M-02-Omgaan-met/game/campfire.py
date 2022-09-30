@@ -1,0 +1,10 @@
+print('--------------------------------------------------------------')
+print('                    |~~                                       ')
+print('                    /\                                        ')
+print('  .--C`)     |~   //  \\\     |~       ,      ,                ')
+print(' (    \|   o/|  /// [] \\\\\ _o)  ,---/V o^   f\.  o/   ___     ')
+print("']\-'}[J   K |  |        |  K| ')>~'>) K   V(|~  K\,(o)~~ kg  ")
+print('')
+print("     Camp of Arcadia's Black Knight's                         ")
+print("     4 Day's away from Capital of Arcadia Kingdom             ")
+
