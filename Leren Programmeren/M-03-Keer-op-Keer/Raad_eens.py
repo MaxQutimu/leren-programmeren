@@ -1,11 +1,16 @@
 import random
 from random import randint
 score = 0
-rondes = int(input("Hoeveel rondes wil je spelen "))
-while rondes >=21 :
-    rondes = int(input("Hoeveel rondes wil je spelen(max 20) "))
 rondeteller = 1
 spel = True
+
+rondes = int(input("Hoeveel rondes wil je spelen "))
+while rondes >=21 :
+    try:
+        rondes = int(input("Hoeveel rondes wil je spelen(max 20) "))
+    except:
+        print("Vul het getal in!")
+
 while spel:
     doorspelen = True
     raad = 0
@@ -28,7 +33,7 @@ while spel:
                 if rondes <= 0:
                     spel = False
                 else:
-                    end=input("Wil je volgende ronde gaan spelen? ")
+                    end=input("Wil je volgende ronde gaan spelen? ").lower()
                     if end in ["no","n","nee"]:
                         spel = False
             
@@ -43,7 +48,7 @@ while spel:
                     if rondes <= 0:
                         spel = False
                     else:
-                        end=input("Wil je volgende ronde gaan spelen? ")
+                        end=input("Wil je volgende ronde gaan spelen? ").lower()
                         if end in ["no","n","nee"]:
                             spel = False
                 elif cijfer >= raad:
