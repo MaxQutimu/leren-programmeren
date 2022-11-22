@@ -1,4 +1,4 @@
-dagen = ["maandag","dinsdag","woensdag","donderdag","vrijdag","zaterdag","zondag"]
+dagen = ("maandag","dinsdag","woensdag","donderdag","vrijdag","zaterdag","zondag")
 
 print(f"Dat zijn alle dagen in het week{dagen}")
 print(f"Dit zijn alle werkdagen {dagen[0:5]}")
