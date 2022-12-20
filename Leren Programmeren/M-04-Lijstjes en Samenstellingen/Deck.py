@@ -1,11 +1,10 @@
 import random
 Kaarten = ("2","3","4","5","6","7","8","9","10","boer","vrouw","heer","aas")
 Kleur = ("harten ","klaveren ","schoppen ","ruiten ")
-Jokers = ("Joker1","Joker2")
 Deck = []
 teller = 0
 for x in Kleur[0:4]:
-    for i in Kaarten[0:12]:
+    for i in Kaarten[0:13]:
         Deck.append (x + i)
 Deck.append ("Joker1")
 Deck.append ("Joker2")
