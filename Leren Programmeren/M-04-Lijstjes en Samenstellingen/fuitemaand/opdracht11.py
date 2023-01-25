@@ -13,10 +13,10 @@ while loop:
             print('Kies een juiste kleur')
 
 rond,niet_rond = 0,0   
-for i in range(len(fruitmand)):
-    kleuren = fruitmand[i].get('color')
+for fruit in fruitmand:
+    kleuren = fruit['color']
     if kleuren == kleur_input:
-        if fruitmand[i].get('round'):
+        if fruit['round']:
             rond += 1
         else:
             niet_rond += 1
@@ -25,9 +25,9 @@ if rond > niet_rond :
     print(f'Ronde fruiten: {rond} niet ronde fruiten: {niet_rond}')
     print(f'Er zijn meer ronde: {rond} fruiten dan niet ronde fruiten:{niet_rond}')
 elif rond < niet_rond:
-    print(f'Ronde fruiten: {rond} niet ronde fruitne: {niet_rond}')
+    print(f'Ronde fruiten: {rond} niet ronde fruiten: {niet_rond}')
     print(f'Er zijn meer niet ronde fruiten: {niet_rond} dan ronde fruiten: {rond}')
 else:
-    print(f'Ronde fruiten: {rond} niet ronde fruitne: {niet_rond}')
-    print(f'Er zijn even veel ronde fruiten: {rond} als niet rone fruiten: {niet_rond}')
+    print(f'Ronde fruiten: {rond} niet ronde fruiten: {niet_rond}')
+    print(f'Er zijn even veel ronde fruiten: {rond} als niet ronde fruiten: {niet_rond}')
 
