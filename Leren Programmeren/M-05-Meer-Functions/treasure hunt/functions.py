@@ -6,37 +6,39 @@ from data import mainCharacter
 ##################### M04.D02.O2 #####################
 
 def copper2silver(amount:int) -> float:
-    while mainCharacter['cash']['copper'] >= 10:
-            mainCharacter['cash']['copper'] -= 10
-            mainCharacter['cash']['silver'] += 1
-    return mainCharacter['cash']
-    pass
+    silver = amount / 10
+    return silver
+    pass 
     
 
 def silver2gold(amount:int) -> float:
-    while mainCharacter['cash']['silver'] >= 5:
-            mainCharacter['cash']['silver'] -= 5
-            mainCharacter['cash']['gold'] += 1
-    return mainCharacter['cash']
-    pass
+    gold = amount / 5
+    return gold
+    pass 
 
 def copper2gold(amount:int) -> float:
-    while mainCharacter['cash']['copper'] >= 50:
-            mainCharacter['cash']['copper'] -= 10
-            mainCharacter['cash']['silver'] += 1
-            silver2gold()
-    return mainCharacter['cash']
+    gold = amount / 50
+    return gold
     pass
+    
 
 def platinum2gold(amount:int) -> float:
-    while mainCharacter['cash']['platinum'] >= 1:
-            mainCharacter['cash']['platinum'] -= 1
-            mainCharacter['cash']['gold'] += 25
-    return mainCharacter['cash']
+    gold = amount * 25
+    return gold
     pass
 
 def getPersonCashInGold(personCash:dict) -> float:
-    return mainCharacter['cash']
+    total_gold = 0.0
+    for coins in personCash:
+        s2g = personCash['silver']
+        silver2gold(s2g)
+        c2g = personCash['copper']
+        copper2gold(c2g)
+        p2g = personCash['platinum']
+        platinum2gold(p2g)
+        gold = personCash['gold']
+        total_gold =  platinum2gold(p2g) + silver2gold(s2g) + copper2gold(c2g) + gold
+        return total_gold
     pass
 
 ##################### M04.D02.O4 #####################
