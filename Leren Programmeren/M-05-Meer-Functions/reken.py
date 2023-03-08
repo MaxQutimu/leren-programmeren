@@ -19,11 +19,11 @@ while True:
         keuze = input('kies een optie ').lower()
         if keuze == 'a' or 'b' or 'c' or 'd':
             if n1 == False:
-                n1 = float(input('voeg 1 getal in'))
+                n1 = float(input('voeg 1 getal in '))
                 
-                n2 = float(input('voeg 2 getal in'))
+                n2 = float(input('voeg 2 getal in '))
             else:
-                n2 = input('voeg 2 getal in')
+                n2 = input('voeg 2 getal in ')
             
             if keuze == 'a':
                 n1 = n1 + n2
@@ -39,10 +39,10 @@ while True:
                 print(n1)
         elif keuze == 'e' or 'f' or 'g' or 'h':
             if n1 == False:
-                n1 = float(input('voeg 1 getal in'))
-                n2 = float(input('voeg 2 getal in'))
+                n1 = float(input('voeg 1 getal in '))
+                n2 = float(input('voeg 2 getal in '))
             else:
-                n2 = input('voeg 2 getal in')
+                n2 = input('voeg 2 getal in ')
                 
             if keuze == 'e':
                 n1 = n1 + 1
