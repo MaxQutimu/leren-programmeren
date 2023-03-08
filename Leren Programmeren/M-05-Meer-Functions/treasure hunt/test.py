@@ -9,6 +9,11 @@ mainCharacter = {
         'copper' : 233
     }
 }
+
+JOURNEY_IN_DAYS = 11
+COST_FOOD_HUMAN_COPPER_PER_DAY = 4
+COST_FOOD_HORSE_COPPER_PER_DAY = 3
+
 # copper - silver ratio 10:1
 def copper2silver(amount:int) -> float:
     silver = amount / 10
@@ -45,7 +50,6 @@ def getPersonCashInGold(personCash:dict) -> float:
         platinum2gold(p2g)
         gold = personCash['gold']
         total_gold =  platinum2gold(p2g) + silver2gold(s2g) + copper2gold(c2g) + gold
-        print(total_gold)
         return coins
     pass
 
@@ -57,3 +61,13 @@ lestDictionairy1 = {
     'copper' : 1
 }
 getPersonCashInGold(lestDictionairy1)
+
+def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
+    food_for_people = COST_FOOD_HUMAN_COPPER_PER_DAY  * people
+    food_for_horses = COST_FOOD_HORSE_COPPER_PER_DAY * horses
+    cost = food_for_people + food_for_horses
+    cost = (cost * JOURNEY_IN_DAYS) / 50
+    return cost
+    pass
+
+getJourneyFoodCostsInGold(12,3)
