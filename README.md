@@ -14,7 +14,7 @@ M05.D02.O5 (inproggres)
 planning (09.03.2023
 
 Java script
-	Horeca app (inproggres)
-	
+	Horeca app (Done)
+M05.D02.O5 (inproggres)
 
 
