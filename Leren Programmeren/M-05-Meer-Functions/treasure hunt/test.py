@@ -1,3 +1,5 @@
+from operator import itemgetter
+
 mainCharacter = {
     'name' : 'Luffy',
     'ownsHorse' : True,
@@ -71,3 +73,36 @@ def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
     pass
 
 getJourneyFoodCostsInGold(12,3)
+
+
+def getFromListByKeyIs(list:list, key:str, value:any) -> list:
+    
+    pass
+thingsList = [
+    {
+        'name' : 'Pie',
+        'tasty' : True,
+        'round' : True
+    },{
+        'name' : 'Fries',
+        'tasty' : True,
+        'round' : False
+    },{
+        'name' : 'Soccerball',
+        'tasty' : False,
+        'round' : True
+    }
+]
+
+result1 = [{
+        'name' : 'Pie',
+        'tasty' : True,
+        'round' : True
+    }, {
+        'name' : 'Soccerball',
+        'tasty' : False,
+        'round' : True
+    }]
+
+if getFromListByKeyIs(thingsList, 'round', True) != result1:
+    print(False)
