@@ -5,6 +5,7 @@
 Python
 	M05.D02.O5 (inproggres)
 Java script
+	Horeca app updaten (done)
 
 (09.03.2023
 
