@@ -3,7 +3,7 @@
 (15.03.2023)
 Python
 	M05.D02.05 (Done)
-	M05.D02.06 (Done)
+	M05.D02.06 (inproggres)
 Java script
 	Module 2
 
