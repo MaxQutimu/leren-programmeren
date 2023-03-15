@@ -1,8 +1,11 @@
 import time
+import math
 from termcolor import colored
 from data import JOURNEY_IN_DAYS
 from data import COST_FOOD_HUMAN_COPPER_PER_DAY
 from data import COST_FOOD_HORSE_COPPER_PER_DAY 
+from data import COST_TENT_GOLD_PER_WEEK
+from data import COST_HORSE_SILVER_PER_DAY
 
 ##################### M04.D02.O2 #####################
 
@@ -77,13 +80,24 @@ def getAdventuringFriends(friends:list) -> list:
 ##################### M04.D02.O6 #####################
 
 def getNumberOfHorsesNeeded(people:int) -> int:
-    pass
+    horses = people / 2 
+    roundhorses = math.ceil(horses)
+    return roundhorses
 
 def getNumberOfTentsNeeded(people:int) -> int:
-    pass
+    tents = people / 3
+    roundtents = math.ceil(tents)
+    return roundtents
+    
 
 def getTotalRentalCost(horses:int, tents:int) -> float:
-    pass
+    renthorses = horses * COST_HORSE_SILVER_PER_DAY * JOURNEY_IN_DAYS
+    renttent = tents * (COST_TENT_GOLD_PER_WEEK * 5 / 7) * JOURNEY_IN_DAYS
+    totalrent = (renthorses  + renttent) 
+    print(totalrent)
+    return totalrent
+
+    
 
 ##################### M04.D02.O7 #####################
 

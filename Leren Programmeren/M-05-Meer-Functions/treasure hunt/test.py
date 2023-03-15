@@ -1,4 +1,6 @@
 from operator import itemgetter
+import math
+from functions import print_colorvars
 
 mainCharacter = {
     'name' : 'Luffy',
@@ -15,6 +17,8 @@ mainCharacter = {
 JOURNEY_IN_DAYS = 11
 COST_FOOD_HUMAN_COPPER_PER_DAY = 4
 COST_FOOD_HORSE_COPPER_PER_DAY = 3
+COST_TENT_GOLD_PER_WEEK = 3
+COST_HORSE_SILVER_PER_DAY = 5
 
 # copper - silver ratio 10:1
 def copper2silver(amount:int) -> float:
@@ -104,5 +108,44 @@ result1 = [{
         'round' : True
     }]
 
-if getFromListByKeyIs(thingsList, 'round', True) != result1:
-    print(False)
+
+
+def getNumberOfHorsesNeeded(people:int) -> int:
+    horses = people / 2 
+    roundhorses = math.ceil(horses)
+    return roundhorses
+
+def getNumberOfTentsNeeded(people:int) -> int:
+    tents = people / 3
+    roundtents = math.ceil(tents)
+    return roundtents
+    
+
+def getTotalRentalCost(horses:int, tents:int) -> float:
+    renthorses = horses * COST_HORSE_SILVER_PER_DAY * JOURNEY_IN_DAYS
+    renttent = tents * (COST_TENT_GOLD_PER_WEEK * 5 / 7) * JOURNEY_IN_DAYS
+    totalrent = (renthorses  + renttent) 
+    print(totalrent)
+    return totalrent
+
+
+
+if getNumberOfTentsNeeded(6) != 2:
+    print_colorvars(vars=['Test 5 is False'], color='red')
+else:
+    print_colorvars(vars=['Test 5 is correct'], color='green')
+
+if getTotalRentalCost(1,2) != 23.0:
+    print_colorvars(vars=['Test 6 is False'], color='red')
+else:
+    print_colorvars(vars=['Test 6 is correct'], color='green')
+
+if getTotalRentalCost(5,2) != 67.0:
+    print_colorvars(vars=['Test 7 is False'], color='red')
+else:
+    print_colorvars(vars=['Test 7 is correct'], color='green')
+
+if getTotalRentalCost(3,11) != 99.0:
+    print_colorvars(vars=['Test 8 is False'], color='red')
+else:
+    print_colorvars(vars=['Test 8 is correct'], color='green')
