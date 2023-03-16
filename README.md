@@ -1,5 +1,7 @@
 # Planning
 (15.03.2023)
+HTML
+	Verder met portfolio
 Python
 	M05.D02.06 (inproggres)
 Java script 
