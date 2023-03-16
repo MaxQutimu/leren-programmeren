@@ -1,5 +1,9 @@
 # Planning
-
+(15.03.2023)
+Python
+	M05.D02.06 (inproggres)
+Java script 
+	Module 2
 (15.03.2023)
 Python
 	M05.D02.05 (Done)
