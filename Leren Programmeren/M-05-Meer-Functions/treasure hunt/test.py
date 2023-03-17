@@ -123,7 +123,7 @@ def getNumberOfTentsNeeded(people:int) -> int:
 
 def getTotalRentalCost(horses:int, tents:int) -> float:
     renthorses = horses * COST_HORSE_SILVER_PER_DAY * JOURNEY_IN_DAYS
-    renttent = tents * (COST_TENT_GOLD_PER_WEEK * 5 / 7) * JOURNEY_IN_DAYS
+    renttent = tents * (COST_TENT_GOLD_PER_WEEK * 5 / 7) * round(JOURNEY_IN_DAYS,7)
     totalrent = (renthorses  + renttent) 
     print(totalrent)
     return totalrent

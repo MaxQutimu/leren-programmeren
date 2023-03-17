@@ -1,11 +1,12 @@
 # Planning
 (17.03.2023)
 Python
-	M05.d02.06(inproggres)
+	M05.D02.06(Done)
+	M05.D02.07(inproggres)
 JavaScript
 	Module 2(inproggres)
 HTML
-	Portfolio(Fouten verbetern)
+	Portfolio(Done)
 (16.03.2023)
 HTML
 	Verder met portfolio
