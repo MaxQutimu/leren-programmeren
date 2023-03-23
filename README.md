@@ -1,4 +1,19 @@
 # Planning
+(23.03.2023)
+Python
+	M05.D02.07(inproggres)
+JavaScript
+	Module 2(inproggres)
+HTML
+	meesterproef(inprogress)
+(22.03.2023)
+Python
+	M05.D02.07(inproggres)
+JavaScript
+	Module 2(inproggres)
+HTML
+	Portfolio(Done)
+
 (17.03.2023)
 Python
 	M05.D02.06(Done)
