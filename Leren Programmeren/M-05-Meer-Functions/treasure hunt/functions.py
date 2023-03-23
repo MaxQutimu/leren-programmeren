@@ -10,25 +10,22 @@ from data import COST_HORSE_SILVER_PER_DAY
 ##################### M04.D02.O2 #####################
 
 def copper2silver(amount:int) -> float:
-    silver = amount / 10
-    return silver
+    return amount /10
     pass 
     
 
 def silver2gold(amount:int) -> float:
-    gold = amount / 5
-    return gold
+    return amount / 5
     pass 
 
 def copper2gold(amount:int) -> float:
-    gold = amount / 50
-    return gold
+    value = copper2silver(amount)
+    return silver2gold(value)
     pass
     
 
 def platinum2gold(amount:int) -> float:
-    gold = amount * 25
-    return gold
+    return amount * 25
     pass
 
 def getPersonCashInGold(personCash:dict) -> float:
@@ -51,8 +48,9 @@ def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
     food_for_people = COST_FOOD_HUMAN_COPPER_PER_DAY  * people
     food_for_horses = COST_FOOD_HORSE_COPPER_PER_DAY * horses
     cost = food_for_people + food_for_horses
-    cost = (cost * JOURNEY_IN_DAYS) / 50
-    return cost
+    cost = (cost * JOURNEY_IN_DAYS)
+    total = copper2gold(cost)
+    return total
     pass
 
 ##################### M04.D02.O5 #####################
@@ -71,10 +69,8 @@ def getShareWithFriends(friends:list) -> int:
     return getFromListByKeyIs(friends, 'shareWith', True)
 
 def getAdventuringFriends(friends:list) -> list:
-    lst = []
-    for x in range(len(friends)):
-        if friends[x]['adventuring'] and friends[x]['shareWith']:
-            lst.append(friends[x])
+    lst = getShareWithFriends(friends)
+    lst = getAdventuringPeople(lst)
     return lst
 
 ##################### M04.D02.O6 #####################
@@ -101,40 +97,60 @@ def getTotalRentalCost(horses:int, tents:int) -> float:
 
 def getItemsAsText(items:list) -> str:
     lst = []
-    for x in range(len(items)):
-        item = str(items[x]['amount'])+ items[x]['unit'] + str(' ') + items[x]['name']
-        lst.append(item)
+    for item in items:
+        Alle_item = f"{item['amount']}{item['unit']} {item['name']}"
+        lst.append(Alle_item)
     return ', '.join(lst)
 
 def getItemsValueInGold(items:list) -> float:
     value = 0
-    for x in range(len(items)):
-        item = items[x]['amount'] * items[x]['price']['amount']
-        if items[x]['price']['type'] == 'copper':
-            value += item  /50
-        elif items[x]['price']['type'] == 'silver':
-            value += item / 5
-        elif items[x]['price']['type'] == 'gold':
-            value += item
-        elif items[x]['price']['type'] == 'platinum':
-            value += item * 25
+    for item in items:
+        ValueItem = item['amount'] * item['price']['amount']
+        if item['price']['type'] == 'copper':
+            value += copper2gold(ValueItem)
+        elif item['price']['type'] == 'silver':
+            value += silver2gold(ValueItem)
+        elif item['price']['type'] == 'gold':
+            value += ValueItem
+        elif item['price']['type'] == 'platinum':
+            value += platinum2gold(ValueItem)
     return value
     pass
 
 ##################### M04.D02.O8 #####################
 
 def getCashInGoldFromPeople(people:list) -> float:
-    pass
+        total_gold = 0
+        for money in people:
+            s2g = money['cash']['silver']
+            silver2gold(s2g)
+            c2g = money['cash']['copper']
+            copper2gold(c2g)
+            p2g = money['cash']['platinum']
+            platinum2gold(p2g)
+            gold = money['cash']['gold']
+            total_gold +=  platinum2gold(p2g) + silver2gold(s2g) + copper2gold(c2g) + gold
+        return total_gold
+    
 
 ##################### M04.D02.O9 #####################
 
 def getInterestingInvestors(investors:list) -> list:
-    pass
+    lst = []
+    for invest in investors:
+        if invest['profitReturn'] <= 10:
+            lst.append(invest)
+    return lst
 
 def getAdventuringInvestors(investors:list) -> list:
-    pass
+    lst = []
+    for people in getInterestingInvestors(investors):
+        if people['adventuring']:
+            lst.append(people)
+    return lst
 
 def getTotalInvestorsCosts(investors:list, gear:list) -> float:
+    getAdventuringInvestors(investors)
     pass
 
 ##################### M04.D02.O10 #####################

@@ -1,7 +1,9 @@
 # Planning
 (23.03.2023)
 Python
-	M05.D02.07(inproggres)
+	M05.D02.07(Done)
+	M05.D02.08(Done)
+	M05.D02.09(inproggres)
 JavaScript
 	Module 2(inproggres)
 HTML
