@@ -1,11 +1,8 @@
 import time
 import math
 from termcolor import colored
-from data import JOURNEY_IN_DAYS
-from data import COST_FOOD_HUMAN_COPPER_PER_DAY
-from data import COST_FOOD_HORSE_COPPER_PER_DAY 
-from data import COST_TENT_GOLD_PER_WEEK
-from data import COST_HORSE_SILVER_PER_DAY
+from data import *
+
 
 ##################### M04.D02.O2 #####################
 
@@ -143,24 +140,39 @@ def getInterestingInvestors(investors:list) -> list:
     return lst
 
 def getAdventuringInvestors(investors:list) -> list:
-    lst = []
+    lstAdventuring = []
     for people in getInterestingInvestors(investors):
         if people['adventuring']:
-            lst.append(people)
-    return lst
+            lstAdventuring.append(people)
+    return lstAdventuring
 
 def getTotalInvestorsCosts(investors:list, gear:list) -> float:
-    getAdventuringInvestors(investors)
-    pass
+    totalCosts = 0
+
+    adventuringInvestors = getAdventuringInvestors(investors)
+
+    for investor in adventuringInvestors:
+        totalCosts += getItemsValueInGold(gear)
+
+    investorJourneyCosts = getJourneyFoodCostsInGold(len(adventuringInvestors), len(adventuringInvestors))
+    investorRentalCosts = getTotalRentalCost(len(adventuringInvestors), len(adventuringInvestors))
+    
+    totalCosts += investorJourneyCosts + investorRentalCosts
+    return totalCosts
 
 ##################### M04.D02.O10 #####################
 
 def getMaxAmountOfNightsInInn(leftoverGold:float, people:int, horses:int) -> int:
-    pass
+    humanInnCosts = silver2gold(people * COST_INN_HUMAN_SILVER_PER_NIGHT)
+    horseInnCosts = copper2gold(horses * COST_INN_HORSE_COPPER_PER_NIGHT)
+
+    return round(leftoverGold / (humanInnCosts + horseInnCosts))
 
 def getJourneyInnCostsInGold(nightsInInn:int, people:int, horses:int) -> float:
-    pass
+    humanInnCosts = silver2gold(people * COST_INN_HUMAN_SILVER_PER_NIGHT)
+    horseInnCosts = copper2gold(horses * COST_INN_HORSE_COPPER_PER_NIGHT)
 
+    return round(nightsInInn * (humanInnCosts + horseInnCosts), 2)
 ##################### M04.D02.O12 #####################
 
 def getInvestorsCuts(profitGold:float, investors:list) -> list:

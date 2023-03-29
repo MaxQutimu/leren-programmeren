@@ -1,4 +1,8 @@
 # Planning
+(29.03.2023)
+Python
+	M05.D02.09(done)
+	M05.D02.10(inproggres)
 (23.03.2023)
 Python
 	M05.D02.07(Done)
