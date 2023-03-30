@@ -1,7 +1,8 @@
 # Planning
+
 (30.03.2023)
 Javascript
-	challange
+	Challange(Done)
 (29.03.2023)
 Python
 	M05.D02.09(Done)
