@@ -1,5 +1,16 @@
 # Planning
-
+Weekplanning(44)
+Python
+	M05.D02.10(Inproggres)
+	M05.D02.10(planning)
+	M05.D02.11(planning)
+JavaScript
+	Buttons 1.0(planning)
+	Buttons 2.0(planning)
+HTML5	
+	wireframe(planning)
+PHP
+	BE102(planning)
 (30.03.2023)
 Javascript
 	Challange(Done)
