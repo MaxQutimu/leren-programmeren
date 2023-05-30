@@ -166,7 +166,7 @@ def totaale_kosten(soort_klant):
     totaal = 0
     totaal_toppings = 0
     for smaak in opgeslagen['smaken']:
-        # if opgeslagen['smaken'][smaak] !=0:
+        if opgeslagen['smaken'][smaak] !=0:
             if soort_klant == 'particuliere':
                 totaal_bolletjes_smaak = opgeslagen["smaken"][smaak] * opgeslagen["prijs_per_bol"]
                 print(f"B.{smaak}      {opgeslagen['smaken'][smaak]} x {format(opgeslagen['prijs_per_bol'],'.2f')} = {format(totaal_bolletjes_smaak,'.2f')}")
@@ -199,9 +199,7 @@ def totaale_kosten(soort_klant):
     if soort_klant == "particuliere":
         print(f"Topping(s) =              {format(totaal_toppings,'.2f')}" )
     print(f"\ntotaal =                 {format(totaal,'.2f')}")
-    print(soort_klant)
     if soort_klant == "zakkelijk":
-        print('test')
         btw = totaal / 100 * 9
         print(f"BTW 9% {format(btw,'.2f')}")
     return True
@@ -211,8 +209,10 @@ def totaale_kosten(soort_klant):
 
 
 def ijssalon(hoorntje_of_bakje):
+    soort_klant = False
     while True:
-        soort_klant = vraag_soort_klant()
+        if soort_klant == False:
+            soort_klant = vraag_soort_klant()
         aantal = aantal_bolletjes_of_liters(soort_klant)
         if soort_klant == "particuliere":
             vraag_bakje(aantal)
@@ -226,13 +226,12 @@ def ijssalon(hoorntje_of_bakje):
             smaken(aantal,soort_klant)
             opslag(soort_klant,aantal,hoorntje_of_bakje)
             break
+    totaale_kosten(soort_klant)
+    
         
         
     return True
 
-def bon():
-    print("-----------Bon----------")
-    totaale_kosten()
 
 
 
