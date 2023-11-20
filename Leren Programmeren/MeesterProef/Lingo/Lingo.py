@@ -25,6 +25,7 @@ def mainGame():
     print(wordToGuess)
     correct_positions = set()
     attempts = 0
+    print("Eerste letter is: ",wordToGuess[0])
     for Guesses in range(5):
         attempts += 1
         print(Fore.WHITE + "Poging:" , attempts)
